@@ -22,7 +22,8 @@
             </button>
           </div>
           <div class="modal-body">
-            <form method="post" enctype="multipart/form-data" action="">
+            <form method="post" enctype="multipart/form-data" action="{{ route('add_art.store') }}">
+              @csrf
                 <div class="form-group row">
                   <label for="name" class="col-sm-2 col-form-label">Name</label>
                   <div class="col-sm-10">
@@ -32,7 +33,19 @@
                 <div class="form-group row">
                   <label for="medium" class="col-sm-2 col-form-label">Mediums</label>
                   <div class="col-sm-10">
-                    <select class="form-control" id="medium" name="medium">
+                    <select class="form-control" id="cartegory" name="cartegory">
+                      <option selected disabled>** Select Medium **</option>
+                      <option>Water Paints</option>
+                      <option>Acrylics</option>
+                      <option>Oils</option>
+                      <option>Mixed Mediums</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group row">
+                  <label for="medium" class="col-sm-2 col-form-label">Mediums</label>
+                  <div class="col-sm-10">
+                    <select class="form-control" id="sub_cartegory" name="sub_cartegory">
                       <option selected disabled>** Select Medium **</option>
                       <option>Water Paints</option>
                       <option>Acrylics</option>
@@ -51,12 +64,6 @@
                   <label for="price" class="col-sm-2 col-form-label">Price</label>
                   <div class="col-sm-10">
                     <input type="number" class="form-control" id="price" name="price" placeholder="Price">
-                  </div>
-                </div>
-                <div class="form-group row">
-                  <label for="date" class="col-sm-2 col-form-label">Post Date</label>
-                  <div class="col-sm-10">
-                    <input type="date" class="form-control" id="date" name="dop">
                   </div>
                 </div>
                 <div class="form-group row">

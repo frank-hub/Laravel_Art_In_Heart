@@ -57,22 +57,11 @@
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
               <a class="nav-link" href="{{url('add_art')}}">
-                <i class="fa fa-fw fa-table"></i>
+                <i class="fa fa-fw fa-image"></i>
                 <span class="nav-link-text">Add Art</span>
               </a>
             </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-                <a class="nav-link" href="{{url('add_art')}}">
-                    <i class="fa fa-fw fa-table"></i>
-                    <span class="nav-link-text">Add Art</span>
-                </a>
-            </li>
-            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-                <a class="nav-link" href="{{url('add_art')}}">
-                    <i class="fa fa-fw fa-table"></i>
-                    <span class="nav-link-text">Add Art</span>
-                </a>
-            </li>
+            
           </ul>
           <ul class="navbar-nav sidenav-toggler">
             <li class="nav-item">

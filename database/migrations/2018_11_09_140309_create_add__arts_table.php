@@ -15,7 +15,14 @@ class CreateAddArtsTable extends Migration
     {
         Schema::create('add__arts', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->string('cartegory');
+            $table->string('sub_cartegory');
+            $table->string('description');
+            $table->integer('price');
+            $table->string('images');
             $table->timestamps();
+            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

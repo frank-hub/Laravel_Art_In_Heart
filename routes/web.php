@@ -55,3 +55,5 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/add_art', 'Add_Arts@index')->name('home');
+
+Route::resource('add_art', 'Add_Arts');
