@@ -54,3 +54,4 @@ Route::get('art_work/photography', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/add_art', 'Add_Arts@index')->name('home');

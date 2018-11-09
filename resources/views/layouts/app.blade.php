@@ -8,23 +8,21 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>{{ config('app.name', 'Laravel') }}</title>
-
+    <script src="{{asset('dashboard/vendor/jquery/jquery.min.js')}}"></script>
     <!-- Scripts -->
-    {{-- <script src="{{ asset('js/app.js') }}" defer></script> --}}
-    {{-- script --}}
-    <script src="{{asset('dashboard/js/sb-admin.min.js')}}"></script>
-<script src="{{asset('dashboard/vendor/jquery/jquery.min.js')}}"></script>
-      <script src="{{asset('dashboard/js/bootbox.min.js')}}"></script>
-    <script src="{{asset('dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
     <!-- Core plugin JavaScript-->
     <script src="{{asset('dashboard/vendor/datatables/jquery.dataTables.js')}}"></script>
     <!-- Page level plugin JavaScript-->
-    <script src="{{asset('dashboard/vendor/datatables/jquery.dataTables.js')}}vendor/datatables/jquery.dataTables.js"></script>
+    <script src="{{asset('dashboard/vendor/datatables/jquery.dataTables.js')}}"></script>
     <script src="{{asset('dashboard/vendor/datatables/dataTables.bootstrap4.js')}}"></script>
     <!-- Custom scripts for all pages-->
     
     <!-- Custom scripts for this page-->
-    <script src="{{asset('dashboard/js/sb-admin-datatables.min.js')}}"></script>
+      {{-- script --}}
+      <script src="{{asset('dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+      <script src="{{asset('dashboard/js/sb-admin.min.js')}}"></script>
+      <script src="{{asset('dashboard/js/bootbox.min.js')}}"></script>
+      <script src="{{asset('dashboard/js/sb-admin-datatables.min.js')}}"></script>
     
 
 
@@ -40,8 +38,6 @@
   <!-- Custom styles for this template-->
 <link href="{{asset('dashboard/css/sb-admin.css')}}" rel="stylesheet">
 
-    <!-- Styles -->
-    {{-- <link href="{{ asset('css/app.css') }}" rel="stylesheet"> --}}
 </head>
 <body>
     <div id="app">
@@ -54,16 +50,28 @@
         <div class="collapse navbar-collapse" id="navbarResponsive">
           <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-              <a class="nav-link" href="index.php">
+              <a class="nav-link" href="{{url('home')}}">
                 <i class="fa fa-fw fa-dashboard"></i>
                 <span class="nav-link-text">Dashboard</span>
               </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
-              <a class="nav-link" href="add_art.php">
+              <a class="nav-link" href="{{url('add_art')}}">
                 <i class="fa fa-fw fa-table"></i>
                 <span class="nav-link-text">Add Art</span>
               </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+                <a class="nav-link" href="{{url('add_art')}}">
+                    <i class="fa fa-fw fa-table"></i>
+                    <span class="nav-link-text">Add Art</span>
+                </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+                <a class="nav-link" href="{{url('add_art')}}">
+                    <i class="fa fa-fw fa-table"></i>
+                    <span class="nav-link-text">Add Art</span>
+                </a>
             </li>
           </ul>
           <ul class="navbar-nav sidenav-toggler">

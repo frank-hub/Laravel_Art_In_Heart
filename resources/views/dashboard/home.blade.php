@@ -115,28 +115,28 @@
                     </tr>
                   </tfoot>
                   <tbody>
-                                                     <tr>
-                                  <td>Something</td>
-                                  <td>Something</td>
-                                  <td>Something</td>
-                                  <td>Something</td>
-                                  <td>Somfe</td>
-                                  <td><img src="uploads/h" title="gh" alt="3" height="30px"></td>
-                                  <td>
-                                        <div class="row mx-auto">
-                                          <button type="button" method="post" class="btn btn-sm btn-success" data-toggle="modal" data-target="#exampleModalCenter" name="" style="padding: 2px;margin: 0px;margin-right:5px;">
-                                              <i class="fa fa-eye"></i><span>
-                                                 
-                                              </span>
-                                          </button>
-                                          <button class="delete btn btn-sm btn-danger" id='del' style="padding: 2px;margin: 0px;margin-left:5px;">
-                                              <i class="fa fa-trash"></i><span>
-                                                  
-                                              </span>
-                                          </button>
-                                        </div>
-                                  </td>
-                                </tr>
+                     <tr>
+                        <td>Something</td>
+                        <td>Something</td>
+                        <td>Something</td>
+                        <td>Something</td>
+                        <td>Somfe</td>
+                        <td><img src="uploads/h" title="gh" alt="3" height="30px"></td>
+                        <td>
+                            <div class="row mx-auto">
+                                <button type="button" method="post" class="btn btn-sm btn-success" data-toggle="modal" data-target="#exampleModalCenter" name="" style="padding: 2px;margin: 0px;margin-right:5px;">
+                                    <i class="fa fa-eye"></i><span>
+                                        
+                                    </span>
+                                </button>
+                                <button class="delete btn btn-sm btn-danger" id='del' style="padding: 2px;margin: 0px;margin-left:5px;">
+                                    <i class="fa fa-trash"></i><span>
+                                        
+                                    </span>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
                   </tbody>
                 </table>
               </div>
