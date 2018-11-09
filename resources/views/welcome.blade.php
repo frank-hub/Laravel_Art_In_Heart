@@ -75,7 +75,13 @@
                         </div>
                 </div>
             </div>
-
+            <div class="jumbotron jumbotron-fluid">
+                <div class="container text-center">
+                    <h1 class="display-4">
+                        Original art from <br> independent artists around the world.
+                    </h1>
+                </div>
+            </div>
                 <div class="row">
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="card h-100">
