@@ -28,7 +28,7 @@
             </button>
           </div>
           <div class="modal-body">
-            <form method="post" enctype="multipart/form-data" action="{{route('discovery.store')}}">
+            <form method="post" enctype="multipart/form-data" action="{{route('artist.store')}}">
               @csrf
                 <div class="form-group row">
                   <label for="name" class="col-sm-2 col-form-label">Name</label>
@@ -84,17 +84,6 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
-                      <<th>Image</th>
-                      <th>Name</th>
-                      <th>Sub Category</th>
-                      <th>Description</th>
-                      <th>Price</th>
-                      <th>Posted date</th>
-                      <th>Action</th>
-                    </tr>
-                  </thead>
-                  <tfoot>
-                    <tr>
                         <th>Image</th>
                         <th>Name</th>
                         <th>Sub Category</th>
@@ -103,18 +92,29 @@
                         <th>Posted date</th>
                         <th>Action</th>
                     </tr>
+                  </thead>
+                  <tfoot>
+                    <tr>
+                      <th>Image</th>
+                      <th>Name</th>
+                      <th>Sub Category</th>
+                      <th>Description</th>
+                      <th>Price</th>
+                      <th>Posted date</th>
+                      <th>Action</th>
+                    </tr>
                   </tfoot>
-                  @foreach ($discoveries as $discovery)
+                  @foreach ($artists as $artist)
                   <tbody>
                     <tr>
-                      <td><img src="{{asset('images/discovery/'.$discovery->images)}}" style="width: 60px; height: 50px"/></td>
-                        <td>{{$discovery->name}}</td>
-                        <td>{{$discovery->sub_category}}</td>
-                        <td>{{$discovery->description}}</td>
-                        <td>{{$discovery->price}}</td>
-                        <td>{{$discovery->created_at}}</td>
+                      <td><img src="{{asset('images/artist/'.$artist->images)}}" style="width: 60px; height: 50px"/></td>
+                        <td>{{$artist->name}}</td>
+                        <td>{{$artist->sub_category}}</td>
+                        <td>{{$artist->description}}</td>
+                        <td>{{$artist->price}}</td>
+                        <td>{{$artist->created_at}}</td>
                         <td>
-                          <form action="{{action('DiscoveriesController@destroy', $discovery['id'])}}" method="post">
+                          <form action="{{action('ArtistController@destroy', $artist['id'])}}" method="post">
                             @csrf
                             <input name="_method" type="hidden" value="DELETE">
                             <button class="btn btn-danger" type="submit">Delete</button>
@@ -124,7 +124,6 @@
                                
                   </tbody>
                   @endforeach
-                  
                 </table>
               </div>
             </div>

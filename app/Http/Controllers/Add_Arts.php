@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Add_Art;
 use Auth;
+use DB;
 class Add_Arts extends Controller
 {
     public function __construct()
@@ -18,9 +19,30 @@ class Add_Arts extends Controller
      */
     public function index()
     {
-        return view('dashboard/add_art');
+        $add_arts = add_art::all();
+        return view('dashboard/add_art', compact('add_arts','add_artCount'));
     }
 
+    // All Art Work
+    public function all(){
+        $all= DB::table('add__arts')->get();
+        return view('art_work/all', compact('all'));
+    }
+    // Painting
+    public function painting(){
+        $art_p['painting'] = DB::table('add__arts')->where('sub_cartegory', 'painting')->get();
+        return view('art_work/painting', compact('art_p'));
+    }
+    // Sculpture
+    public function sculpture(){
+        $art['sculpture'] = DB::table('add__arts')->where('sub_cartegory', 'sculpture')->get();
+        return view('art_work/sculpture', compact('art'));
+    }
+    // Photography
+    public function photography(){
+        $art['photography'] = DB::table('add__arts')->where('sub_cartegory', 'photography')->get();
+        return view('art_work/photography', compact('gifts'));
+    }
     /**
      * Show the form for creating a new resource.
      *
@@ -53,7 +75,7 @@ class Add_Arts extends Controller
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             $extension = $request->file('artImage')->getClientOriginalExtension();
             $fileNameToStore = $filename . '_' . time() . '.' . $extension;
-            $path = $request->file('artImage')->storeAs('public/art', $fileNameToStore);
+            $path = $request->file('artImage')->move(public_path('images/art_work'), $fileNameToStore);
         } else {
             $fileNameToStore = 'default.png';
         }
@@ -114,6 +136,8 @@ class Add_Arts extends Controller
      */
     public function destroy($id)
     {
-        //
+        $art =  Add_Art::find($id);
+        $art->delete();
+        return redirect('add_art')->with('success', 'Information has been  deleted');
     }
 }

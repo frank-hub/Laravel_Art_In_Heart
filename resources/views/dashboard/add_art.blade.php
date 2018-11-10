@@ -90,35 +90,46 @@
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                   <thead>
                     <tr>
+                      <th>Image</th>
                       <th>Name</th>
-                      <th>Mediums</th>
+                      <th>Sub Category</th>
                       <th>Description</th>
                       <th>Price</th>
                       <th>Posted date</th>
-                      <th>##</th>
+                      <th>Action</th>
                     </tr>
                   </thead>
                   <tfoot>
                     <tr>
+                      <th>Image</th>
                       <th>Name</th>
-                      <th>Mediums</th>
+                      <th>Sub Category</th>
                       <th>Description</th>
                       <th>Price</th>
                       <th>Posted date</th>
-                      <th>Image</th>
+                      <th>Action</th>
                     </tr>
                   </tfoot>
+                  @foreach ($add_arts as $add_art)
                   <tbody>
                     <tr>
-                        <td>Something here</td>
-                        <td>Something Here</td>
-                        <td><Something here</td>
-                        <td>Something Here</td>
-                        <td>Something Here</td>
-                        <td>Something Here</td>
+                      <td><img src="{{asset('images/art_work/'.$add_art->images)}}" style="width: 60px; height: 50px"/></td>
+                        <td>{{$add_art->name}}</td>
+                        <td>{{$add_art->sub_category}}</td>
+                        <td>{{$add_art->description}}</td>
+                        <td>{{$add_art->price}}</td>
+                        <td>{{$add_art->created_at}}</td>
+                        <td>
+                          <form action="{{action('Add_Arts@destroy', $add_art['id'])}}" method="post">
+                            @csrf
+                            <input name="_method" type="hidden" value="DELETE">
+                            <button class="btn btn-danger" type="submit">Delete</button>
+                    </form>
+                        </td>
                     </tr>
                                
                   </tbody>
+                  @endforeach
                 </table>
               </div>
             </div>

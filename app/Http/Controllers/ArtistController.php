@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Discovery;
+use App\Artist;
 use Auth;
 use DB;
-
-class DiscoveriesController extends Controller
+class ArtistController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,31 +15,17 @@ class DiscoveriesController extends Controller
      */
     public function index()
     {
-        $discoveries = discovery::all();
-        return view('dashboard/discovery', compact('discoveries', 'productCount'));
-        
-    }
-    
-    // Featured Art
-    public function feature_art(){
-        $feature_art['Feature Art'] = DB::table('discoveries')->where('sub_category', 'Feature Art')->get();
-        // $feature_art = discovery::all();
-        return view('discover/featured_art', compact('feature_art'));
+        $artists = artist::all();
+        return view('dashboard/artist', compact('artists', 'artistCount'));
+        // return view('dashboard/artist');
     }
 
-    // art of the week
-    public function week(){
-        // $weeks['art of the week'] = DB::table('discoveries')->select('name','sub_category','price','images')->get();
-        $weeks['art of the week'] = DB::table('discoveries')->where('sub_category', 'art of the week')->get();
-        return view('discover/art_of_week', compact('weeks'));
+    // Artist Page
+    public function artist(){
+        $artist_page = DB::table('artists')->get();
+        // $gifts['gift'] = DB::table('discoveries')->where('sub_category', 'gift')->get();
+        return view('artist', compact('artist_page'));
     }
-
-    // gift
-    public function gift(){
-        $gifts['gift'] = DB::table('discoveries')->where('sub_category', 'gift')->get();
-        return view('discover/gift', compact('gifts'));
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -64,22 +49,22 @@ class DiscoveriesController extends Controller
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
             $extension = $request->file('artImage')->getClientOriginalExtension();
             $fileNameToStore = $filename . '_' . time() . '.' . $extension;
-            $path = $request->file('artImage')->move(public_path('images/discovery'), $fileNameToStore);
+            $path = $request->file('artImage')->move(public_path('images/artist'), $fileNameToStore);
         } else {
             $fileNameToStore = 'default.png';
         }
-        $discovery = new Discovery;
+        $artist = new Artist;
 
         // $add_art->user_id = Auth::id();
-        $discovery->name = $request->get('name');
-        $discovery->sub_category = $request->get('sub_category');
-        $discovery->description=$request->get('desc');
-        $discovery->price =$request->get('price');
-        $discovery->images =$request->get('images');
-        $discovery->images = $fileNameToStore;
-        $discovery->save();
+        $artist->name = $request->get('name');
+        $artist->sub_category = $request->get('sub_category');
+        $artist->description=$request->get('desc');
+        $artist->price =$request->get('price');
+        $artist->images =$request->get('images');
+        $artist->images = $fileNameToStore;
+        $artist->save();
 
-        return redirect('discovery')->with('success','New Piece Added');
+        return redirect('artist')->with('success','New Piece Added');
     }
 
     /**
@@ -124,9 +109,8 @@ class DiscoveriesController extends Controller
      */
     public function destroy($id)
     {
-        $discovery =  Discovery::find($id);
-        $discovery->delete();
-        return redirect('discovery')->with('success', 'Information has been  deleted');
-
+        $artist = new Artist;
+        $artist->delete();
+        return redirect('artist')->with('success', 'Information has been  deleted');
     }
 }

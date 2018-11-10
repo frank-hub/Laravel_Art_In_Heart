@@ -14,64 +14,23 @@
 <div class="container">
 
         <div class="row">
+            @foreach ($feature_art['Feature Art'] as $feature_art)
                 <div class="col-lg-3 col-md-6 mb-4">
                     <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="{{asset('images/11.jpg')}}" alt="" height="150px"></a>
+                        <a href="#"><img class="card-img-top img-fluid" src="{{asset('images/discovery/'.$feature_art->images)}}" alt="" height="300px"></a>
                         <div class="card-body">
                         <h4 class="card-title">
-                            <a href="#">The Price</a>
+                            <a href="#">{{$feature_art->name }}</a>
                         </h4>
-                        <h5><strong>Ksh. 3400</strong></h5>
+                        <h5>Ksh. {{$feature_art->price}}</h5>
                         <small class="text-danger">&#9733; &#9733; &#9733; &#9733; &#9733; (5)</small>
-                        <p class="card-text">Some thing here</p>
+                        <p class="card-text">{{$feature_art->description}}</p>
                         </div>
                     
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="{{asset('images/12.jpg')}}" alt="" height="150px"></a>
-                        <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">The Price</a>
-                        </h4>
-                        <h5><strong>Ksh. 3400</strong></h5>
-                        <small class="text-danger">&#9733; &#9733; &#9733; &#9733; &#9733; (5)</small>
-                        <p class="card-text">Some thing here</p>
-                        </div>
-                    
-                    </div>
-                </div>
-    
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="{{asset('images/13.jpg')}}" alt="" height="150px"></a>
-                        <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">The Price</a>
-                        </h4>
-                        <h5><strong>Ksh. 3400</strong></h5>
-                        <small class="text-danger">&#9733; &#9733; &#9733; &#9733; &#9733; (5)</small>
-                        <p class="card-text">Some thing here</p>
-                        </div>
-                    
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="{{asset('images/12.jpg')}}" alt="" height="150px"></a>
-                        <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">The Price</a>
-                        </h4>
-                        <h5><strong>Ksh. 3400</strong></h5>
-                        <small class="text-danger">&#9733; &#9733; &#9733; &#9733; &#9733; (5)</small>
-                        <p class="card-text">Some thing here</p>
-                        </div>
-                    
-                    </div>
-                </div>
-    
+               
+                @endforeach
                 
                 </div>
                   

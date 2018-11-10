@@ -62,6 +62,12 @@
               </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+              <a class="nav-link" href="{{url('artist')}}">
+                <i class="fa fa-paint-brush"></i>
+                <span class="nav-link-text">Artist</span>
+              </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
               <a class="nav-link" href="{{url('add_art')}}">
                 <i class="fa fa-fw fa-image"></i>
                 <span class="nav-link-text">Art Work</span>

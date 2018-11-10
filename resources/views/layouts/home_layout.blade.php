@@ -99,7 +99,7 @@
                         </div>
                     </li>
                 <li class="nav-item">
-                <a class="nav-link" href="{{url('artist')}}">Artist</a>
+                <a class="nav-link" href="{{url('discover/artist')}}">Artist</a>
                 </li>
                 <li class="nav-item dropdown dropdown-slide dropdown-hover">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
