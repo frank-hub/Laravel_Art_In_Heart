@@ -21,6 +21,12 @@ class DiscoveriesController extends Controller
         
     }
     
+    public function home(){
+        $home_w['art of the week'] = DB::table('discoveries')->where('sub_category', 'art of the week')->get();
+        // $feature_art = discovery::all();
+        return view('welcome', compact('home_w'));
+    }
+
     // Featured Art
     public function feature_art(){
         $feature_art['Feature Art'] = DB::table('discoveries')->where('sub_category', 'Feature Art')->get();

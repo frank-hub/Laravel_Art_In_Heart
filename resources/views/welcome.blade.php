@@ -82,22 +82,33 @@
                     </h1>
                 </div>
             </div>
-                <div class="row">
-                
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="card h-100">
-                        <a href="#"><img class="card-img-top" src="{{asset('images/11.jpg')}}" alt="" height="150px"></a>
-                        <div class="card-body">
-                        <h4 class="card-title">
-                            <a href="#">The Price</a>
-                        </h4>
-                        <h5>Ksh. 3400</h5>
-                        <small class="text-danger">&#9733; &#9733; &#9733; &#9733; &#9733; (5)</small>
-                        <p class="card-text">Some thing here</p>
-                        </div>
-                    
-                    </div>
+            <div class="text-center">
+                    <h4 class="" style="letter-spacing: 15px;">
+                        <span><hr style="width: 395px;"></span>
+                        The Art Of The Week
+                        <span><hr style="width: 395px;"></span>
+                    </h4>
                 </div>
+                <div class="row">
+                        @foreach ($home_w['art of the week'] as $home)
+                        <div class="col-lg-3 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <a href="#">
+                                    <img class="card-img-top img-fluid" src="{{asset('images/discovery/'.$home->images)}}" alt="{{$home->name}}" height="150px">
+                                </a>
+                                <div class="card-body">
+                                <h4 class="card-title">
+                                    <a href="#">{{$home->name}}</a>
+                                </h4>
+                                <h5>Ksh. {{$home->price}}</h5>
+                                <small class="text-danger">&#9733; &#9733; &#9733; &#9733; &#9733; (5)</small>
+                                <p class="card-text">{{$home->description}}</p>
+                                </div>
+                            
+                            </div>
+                        </div>
+                       
+                        @endforeach>
                 
                 
                 

@@ -35,13 +35,13 @@ class Add_Arts extends Controller
     }
     // Sculpture
     public function sculpture(){
-        $art['sculpture'] = DB::table('add__arts')->where('sub_cartegory', 'sculpture')->get();
-        return view('art_work/sculpture', compact('art'));
+        $art_s['sculpture'] = DB::table('add__arts')->where('sub_cartegory', 'sculpture')->get();
+        return view('art_work/sculpture', compact('art_s'));
     }
     // Photography
     public function photography(){
-        $art['photography'] = DB::table('add__arts')->where('sub_cartegory', 'photography')->get();
-        return view('art_work/photography', compact('gifts'));
+        $art_ph['photography'] = DB::table('add__arts')->where('sub_cartegory', 'photography')->get();
+        return view('art_work/photography', compact('art_ph'));
     }
     /**
      * Show the form for creating a new resource.

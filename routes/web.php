@@ -52,6 +52,7 @@ Route::get('/discover/artist', function () {
 //     return view('art_work/photography');
 // });
 Auth::routes();
+Route::get('/', 'DiscoveriesController@home')->name('home');
 
 Route::get('/discover/featured', 'DiscoveriesController@feature_art')->name('featured');
 Route::get('/discover/week', 'DiscoveriesController@week')->name('week');
