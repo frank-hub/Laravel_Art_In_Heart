@@ -56,9 +56,15 @@
               </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+              <a class="nav-link" href="{{url('discovery')}}">
+                <i class="fa fa-cc-discover"></i>
+                <span class="nav-link-text">Discovery</span>
+              </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
               <a class="nav-link" href="{{url('add_art')}}">
                 <i class="fa fa-fw fa-image"></i>
-                <span class="nav-link-text">Add Art</span>
+                <span class="nav-link-text">Art Work</span>
               </a>
             </li>
             

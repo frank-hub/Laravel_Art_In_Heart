@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAddArtsTable extends Migration
+class CreateDiscoveriesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateAddArtsTable extends Migration
      */
     public function up()
     {
-        Schema::create('add__arts', function (Blueprint $table) {
+        Schema::create('discoveries', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('cartegory');
-            $table->string('sub_cartegory');
+            $table->string('sub_category');
             $table->string('description');
             $table->integer('price');
             $table->string('images');
@@ -32,6 +31,6 @@ class CreateAddArtsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('add__arts');
+        Schema::dropIfExists('discoveries');
     }
 }

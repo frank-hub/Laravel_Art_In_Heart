@@ -8,9 +8,9 @@
             <li class="breadcrumb-item">
               <a href="{{url('home')}}">Dashboard</a>
             </li>
-            <li class="breadcrumb-item active">Art List</li>
+            <li class="breadcrumb-item active">Discovery</li>
             <li style="margin-left:45em; margin-top:0px;">
-              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">ADD ART</button></li>
+              <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">ADD Item</button></li>
           </ol>
           @if (session('status'))
               <div class="alert alert-success">
@@ -22,13 +22,13 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLongTitle">Art Details</h5>
+            <h5 class="modal-title" id="exampleModalLongTitle">Discovery Details</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <form method="post" enctype="multipart/form-data" action="{{route('add_art.store')}}">
+            <form method="post" enctype="multipart/form-data" action="{{route('discovery.store')}}">
               @csrf
                 <div class="form-group row">
                   <label for="name" class="col-sm-2 col-form-label">Name</label>
@@ -37,19 +37,13 @@
                   </div>
                 </div>
                 <div class="form-group row">
-                  <label for="medium" class="col-sm-2 col-form-label">Category</label>
-                  <div class="col-sm-10">
-                    <input type="text" class="form-control " name="cartegory" id="cartegory" value="art work" >
-                  </div>
-                </div>
-                <div class="form-group row">
                   <label for="medium" class="col-sm-2 col-form-label">Sub Category</label>
                   <div class="col-sm-10">
                     <select class="form-control" id="sub_cartegory" name="sub_cartegory">
                       <option selected disabled>** Choose One **</option>
-                      <option>Painting</option>
-                      <option>Sculpture</option>
-                      <option>Photography</option>
+                      <option>Feature Art</option>
+                      <option>Art of the week</option>
+                      <option>Gift</option>
                     </select>
                   </div>
                 </div>

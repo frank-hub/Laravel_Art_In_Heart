@@ -39,15 +39,15 @@ class Add_Arts extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request,[
-            'name'=>'required',
-            'category'=>'required',
-            'sub_category'=>'required',
-            'sub_category'=>'required',
-            'desc'=>'required',
-            'price'=>'required',
-            'artImage'=>'required',
-        ]);
+        // $this->validate($request,[
+        //     'name'=>'required',
+        //     'cartegory'=>'required',
+        //     'sub_category'=>'required',
+        //     'sub_category'=>'required',
+        //     'desc'=>'required',
+        //     'price'=>'required',
+        //     'artImage'=>'required',
+        // ]);
         if ($request->hasFile('artImage')) {
             $filenameWithExt = $request->file('artImage')->getClientOriginalName();
             $filename = pathinfo($filenameWithExt, PATHINFO_FILENAME);
@@ -59,17 +59,17 @@ class Add_Arts extends Controller
         }
         $add_art = new Add_Art;
 
-        $add_art->user_id = Auth::id();
+        // $add_art->user_id = Auth::id();
         $add_art->name = $request->get('name');
-        $add_art->category = $request->get('category');
-        $add_art->sub_category = $request->get('sub_category');
-        $add_art->desc=$request->get('desc');
+        $add_art->cartegory = $request->get('cartegory');
+        $add_art->sub_cartegory = $request->get('sub_cartegory');
+        $add_art->description=$request->get('desc');
         $add_art->price =$request->get('price');
-        $add_art->artImage =$request->get('images');
-        $add_art->artImage = $fileNameToStore;
+        $add_art->images =$request->get('images');
+        $add_art->images = $fileNameToStore;
         $add_art->save();
 
-        return redirect('dashboard/add_art')->with('success','New Piece Added');
+        return redirect('add_art')->with('success','New Piece Added');
     }
 
     /**
